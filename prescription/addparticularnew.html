@@ -1,0 +1,81 @@
+
+<html>
+<head>
+    <title>ADD Particulars</title>
+    <style>
+    label{
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+
+    p{
+        box-sizing: border-box;
+    }
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input[type=date] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input[type=submit]{
+    color: green;
+    padding: 5px 25px 5px 25px;
+}
+
+.float-right{
+    float: right;
+    padding: 20px;
+}
+
+.float-left{
+    float:left;
+    width: 50%;
+    padding: 20px;
+}
+
+table.cd th  { background:#eee; padding:5px; border:1px solid #ccc; width: 60px;}
+
+table.db td  { padding:5px; border:1px solid #ccc; width: 60px; text-align: center; }
+
+
+</style>
+</head>
+<body>
+    <div class="float-left">
+    <form method="post" action="addparticularnew.php">
+        <!--<label>Patient ID </label> <input type="text" required="required" name="patientId" placeholder="Remember the ID"><br>-->
+        <label>Particular Name </label> <input type="text" required="required" name="particularname" placeholder="Enter New Particular name"><br>
+
+        <label> Particular Rate </label><input type="text" required="required" name="particularrate" placeholder="Enter Particular Rate"><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <p id="diplay"></p>
+    </div>
+    <div class="float-right">
+
+    </div>
+</body>
+</html>
+
+

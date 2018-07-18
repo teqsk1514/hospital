@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.body-1{
+    background-color: #EEEEEE;
+}
+.content{
+    padding: 40px;
+}
+.logout{
+    float: right;
+}
+
+.button {
+    width: 10%;
+    float: right;
+    background-color: transparent;
+    border: 2px solid teal;
+    border-radius: 4px;
+    display: inline-block;
+    color: teal;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 0 22px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+}
+.button-container {
+    background-color: transparent;
+    border: 2px solid teal;
+    border-radius: 4px;
+    display: inline-block;
+    color: teal;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    margin: 5px;
+    overflow: hidden;
+    padding: 0 22px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+}
+.header{
+    float: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    text-align: center;
+    color: #6A1B9A;
+    font-family:'Josefin Sans';
+
+
+}

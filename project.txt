@@ -1,0 +1,94 @@
+CREATE TABLE patient
+(
+patientId int NOT NULL AUTO_INCREMENT,
+patientName varchar(20) NOT NULL,
+age int,
+gender varchar(10),
+address varchar(100),
+deposit int NOT NULL,
+regDate date,
+phoneno int,
+docID int NOT NULL,
+CONSTRAINT pk_patientId PRIMARY KEY (patientId),
+CONSTRAINT fk_docID FOREIGN KEY (docID) REFERENCES doctor (docID)
+);
+
+INSERT INTO `patient` (`patientId`, `patientName`, `age`, `gender`, `address`, `deposit`, `regDate`, `phoneno`, `docID`)
+VALUES (NULL, 'ravi', '21', 'male', 'jssate', '', '2017-11-12', '8989', '1');
+
+
+
+
+CREATE TRIGGER `auto_deposit` BEFORE INSERT ON `patient` FOR EACH ROW BEGIN SET NEW.DEPOSIT=500; END
+
+
+
+CREATE TABLE particular
+(
+particularId int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+particularName varchar(20) NOT NULL,
+rate int
+);
+
+////'''''
+UPDATE pharmacy P
+  SET (total) = (select rate*quantity
+                       from  particular pp
+                      where p.particularId=pp.particularId);
+
+
+                      ////''''
+                      select quantity * rate as total
+FROM pharmacy p,particular pp
+WHERE p.particularId = pp.particularId
+
+
+
+CREATE TABLE pharmacy
+(
+patientId int,
+particularId int,
+quantity int NOT NULL,
+amount int ,
+CONSTRAINT pk_patientId PRIMARY KEY (patientId,particularId),
+CONSTRAINT fk_patientID FOREIGN KEY (patientId) REFERENCES patient (patientId),
+CONSTRAINT fk_paticularID FOREIGN KEY (paticularId) REFERENCES particular (paticularId)
+);
+
+
+/////''''''''
+
+CREATE TABLE laboratory
+(
+patientId int NOT NULL,
+testId int NOT NULL,
+testDate date,
+remarks varchar(100),
+PRIMARY KEY (patientId,testId),
+FOREIGN KEY (patientId) REFERENCES patient (patientId),
+FOREIGN KEY (testId) REFERENCES test (testId)
+);
+
+CREATE TABLE checking
+(
+docId int NOT NULL,
+patientId int NOT NULL,
+checkDate date,
+fee int,
+remarks varchar(100),
+PRIMARY KEY (patientId,docId),
+FOREIGN KEY (patientId) REFERENCES patient (patientId),
+FOREIGN KEY (docId) REFERENCES doctor (docID)
+)
+
+
+
+SET new.total = new.quantity *(SELECT p.rate from particular p, pharmacy pp WHERE p.particularId=new.particularId)
+
+
+
+SELECT (SUM(p.amount)) as totalamount,pp.patientId FROM pharmacy p,patient pp WHERE p.patientId=pp.patientId GROUP BY pp.patientId
+
+SELECT SUM(t.amount) FROM test as t ,laboratory as l , patient as p WHERE l.patientId=p.patientId AND t.testId=l.testId GROUP BY p.patientId
+
+SELECT deposit,patientId FROM patient

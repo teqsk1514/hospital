@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details</title>
+    <link rel="stylesheet" type="text/css" href="../welcome.css" >
+
+</head>
+<body>
+    <style type="text/css">
+        input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+
+}
+input[type=submit]{
+    color: green;
+    padding: 5px 25px 5px 25px;
+}
+    </style>
+    <header>
+        <h1>Patient Details.....</h1>
+    </header>
+    <center>
+    <div class='button-container'  onclick="location.href ='addpatientnew.php';">Add Patient</div>
+    <br>
+    <div class=''  onclick="location.href ='';"><h1 style="color: teal">Show Patient Details</h1></div>
+    <!--<div class='button-container'  onclick="location.href ='deletepatient.html';">Delete Patient</div>-->
+    <form method="post" action="patientdetails.php" name="patient">
+        <input name="pID" placeholder="Enter patientId" type="text" required="required">
+        <input type="submit" name="SubmitButton" value="Submit">
+    </form>
+
+    <!--
+    <form method="post" action="patientdetails.php" name="patient">
+        <input name="pID" placeholder="Enter patientId For pharmacy Details" type="text" required="required">
+        <input type="submit" name="SubmitButton" value="Submit">
+    </form>
+<form method="post" action="patientdetails.php" name="patient">
+        <input name="pID" placeholder="Enter patientId For Test Details" type="text" required="required">
+        <input type="submit" name="SubmitButton" value="Submit">
+    </form>
+
+-->
+    </center>
+    <button class="button-container" onclick="location.href ='../welcome.html'">GO TO MAIN PAGE</button>
+
+</body>
+</html>

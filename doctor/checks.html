@@ -1,0 +1,88 @@
+
+<html>
+<head>
+    <title>ADD Patient</title>
+    <style>
+    label{
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+
+    p{
+        box-sizing: border-box;
+    }
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+input[type=date] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+input[type=number] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+textarea {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid red;
+    border-radius: 4px;
+}
+input[type=submit]{
+    color: green;
+    padding: 5px 25px 5px 25px;
+}
+
+.float-right{
+    float: right;
+    padding: 20px;
+}
+
+.float-left{
+    float:left;
+    width: 50%;
+    padding: 20px;
+}
+
+table.cd th  { background:#eee; padding:5px; border:1px solid #ccc; width: 60px;}
+
+table.db td  { padding:5px; border:1px solid #ccc; width: 60px; text-align: center; }
+
+
+</style>
+</head>
+<body>
+    <div class="float-left">
+    <form method="post" action="checks.php">
+        <!--<label>Patient ID </label> <input type="text" required="required" name="patientId" placeholder="Remember the ID"><br>-->
+        <label>DocID </label> <input type="text" required="required" name="docid" placeholder="Enter DocID"><br>
+
+        <label> Patient ID </label><input type="number" required="required" name="patientid" min="1"  placeholder="Enter Patient ID"><br>
+
+        <label> CheckDate </label><input type="date" required="required" name="checkdate"><br>
+        <label> Fees </label><input type="text" required="required" name="fees" placeholder="checking fees"><br>
+
+        <label> </label><input type="text" name="remarks" cols="30" rows="3" placeholder="Text Remarks"     ></input><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <p id="display"></p>
+</body>
+</html>
+
+
